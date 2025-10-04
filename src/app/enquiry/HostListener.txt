@@ -1,0 +1,99 @@
+@HostListener()
+
+	This is a function decorator that accepts an event as an argument. 
+	When that event get fired on the host element it calls associated function.
+	
+	eg : 
+	
+	@HostListener('click',['$event'])
+	show(){
+		alert("show data")
+	}
+	
+	
+	@HostListener('mouseenter', ['$event'])
+	addColor() {
+		// alert('show event called');
+		this.eleRef.nativeElement.style.color = 'green';
+	}
+
+	@HostBinding('style.color') setColor;
+	@HostListener('mouseout', ['$event'])
+	changeColor() {
+		this.setColor = 'red';
+		// this.eleRef.nativeElement.style.color = 'red';
+	}
+	
+	
+	
+	
+	
+	
+@HostBinding()
+	HostBinding let you set the property on the element or component that hosts the directive.
+	
+	 @HostBinding('style.color') setColor;
+	 @HostListener('mouseout', ['$event'])
+	 changeColor() {
+		this.setColor = 'red';
+		// this.eleRef.nativeElement.style.color = 'red';
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+------------------------------using HostBinding------------------------------
+
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener,
+} from '@angular/core';
+
+@Directive({
+  selector: '[changeColor]',
+})
+export class colorDirective {
+  constructor(public eleRef: ElementRef) {}
+
+  @HostBinding('style.color') setColor;
+  @HostListener('mouseover', ['$event'])
+  addColor() {
+    this.setColor = 'green';
+  }
+
+  @HostListener('mouseout', ['$event'])
+  removeColor() {
+    this.setColor = '';
+  }
+}
+
+
+------------------------------using HostListener------------------------------
+
+import {
+  Directive,
+  ElementRef,
+  HostBinding,
+  HostListener,
+} from '@angular/core';
+
+@Directive({
+  selector: '[changeColor]',
+})
+export class colorDirective {
+  constructor(public eleRef: ElementRef) {}
+
+  @HostListener('mouseover', ['$event'])
+  addColor() {
+    this.eleRef.nativeElement.style.background = 'green';
+  }
+
+  @HostListener('mouseout', ['$event'])
+  removeColor() {
+    this.eleRef.nativeElement.style.background = '';
+  }
+}

@@ -1,0 +1,126 @@
+<main class="main clearfix">
+
+    <section class="section section-inner-hero section-anim p-0" style="background-image: url(./assets/images/hero-image2.jpg); background-size: cover; background-position: center">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-12 py-5 my-5 text-center text-white">
+                    <h1>Contact Us</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- popular section -->
+    <section class="section section-anim">
+        <div class="container animFade">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <address>
+                        <h6 class="text-primary">Head Office</h6>
+                        <h4>Company Name</h4>
+                        B63, Second Floor, Lajpat Nagar 1,<br>
+                        New Delhi - 110024, India<br><br>
+                        <i class="bi bi-envelope"></i> Email: info@sarvaumrah.com<br>
+                        <i class="bi bi-telephone"></i> Phone: 8447062066
+                    </address>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <address>
+                        <h6 class="text-primary">Branch Office</h6>
+                        <h4>Company Name</h4>
+                        B63, Second Floor, Lajpat Nagar 1,<br>
+                        New Delhi - 110024, India<br><br>
+                        <i class="bi bi-envelope"></i> Email: info@sarvaumrah.com<br>
+                        <i class="bi bi-telephone"></i> Phone: 8447062066
+                    </address>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            
+                            <form id="addCustomer-form" role="form" method="post" [formGroup]="enquiryForm" (ngSubmit)="onSubmit(enquiryForm.value)">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <label for="">Your Name<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" required="" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" formControlName="name">
+                                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                            <div *ngIf="f.name.errors.required">Name is required</div>
+                                       </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <label for="">Email Address<span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" required="" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email">
+                                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Email is required</div>
+                                       </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <label for="">Phone Number<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" required="" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" formControlName="phone">
+                                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                                            <div *ngIf="f.phone.errors.required">Phone is required <small>(10 digits)</small></div>
+                                       </div>
+                                    </div>
+                                    <div class="col-12 col-lg-4">
+                                        <label for="">Zip Code<span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" required="" [ngClass]="{ 'is-invalid': submitted && f.zip.errors }" formControlName="zip">
+                                        <div *ngIf="submitted && f.zip.errors" class="invalid-feedback">
+                                            <div *ngIf="f.zip.errors.required">Zip is required <small>(6 digits)</small></div>
+                                       </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="">Full Address<span class="text-danger">*</span></label>
+                                        <input name="address" id="address" cols="30" rows="1" class="form-control h-auto" required="" [ngClass]="{ 'is-invalid': submitted && f.address.errors }" formControlName="address">
+                                        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                                            <div *ngIf="f.address.errors.required">Address is required</div>
+                                       </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="">Message<span class="text-danger">*</span></label>
+                                        <textarea name="message" id="message" cols="30" rows="2" class="form-control h-auto" [ngClass]="{ 'is-invalid': submitted && f.message.errors }" formControlName="message"></textarea>
+                                        <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                                            <div *ngIf="f.message.errors.required">Message is required</div>
+                                       </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+    <!-- subscription section -->
+    <section class="py-5 theme-bg-primary animFade">
+        <div class="container">
+            <div class="row justify-between items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="d-flex  align-items-center">
+                        <img src="assets/images/icons/subscribe-icon.png" alt="subscribe" class="img-fluid">
+                        <div class="ms-3">
+                            <h4 class="text-26 text-white fw-600">Your Travel Journey Starts Here</h4>
+                            <p class="text-white">Sign up and we'll send the best deals to you</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 offset-lg-1 align-self-center">
+                    <div class="input-group subs-form">
+                        <input type="text" class="form-control border-0" placeholder="Your Email"
+                            aria-label="Your Email" aria-describedby="button-addon2">
+                        <button class="btn btn-search" type="button" id="button-addon2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section-->
+    
+</main>

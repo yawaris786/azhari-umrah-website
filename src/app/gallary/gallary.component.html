@@ -1,0 +1,98 @@
+<main class="main clearfix">
+
+    <section class="section section-inner-hero section-anim p-0" style="background-image: url(./assets/images/hero-image2.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 py-5 text-center text-white">
+                    <h1>Gallery</h1>
+
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-12 col-lg-6">
+                            <form id="filter-form" role="form" method="post" [formGroup]="filterForm" (ngSubmit)="onFilterSubmit(filterForm.value)">
+                                <div class="search-pan row mx-0 theme-border-radius">
+                                    <div class="col-12 col-lg-4 col-xl ps-0 mb-2 mb-xl-0 pe-0 pe-lg-2">
+                                        <div class="form-group">
+                                            <!-- <label for="">Package Type</label> -->
+                                            <select
+                                                formControlName="package_id"
+                                                class="form-select form-select-lg"
+                                                id="package_id"
+                                                placeholder="Select Package"
+                                                >
+                                                <option *ngFor="let package of packageList"
+                                                        [value]="package._id">
+                                                    {{package.title}}
+                                                </option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <!-- <button class="btn btn-primary">Submit</button> -->
+                                        <button type="submit" class="btn btn-search">
+                                            <span class="fw-bold"><i class="bi bi-search me-2"></i>Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- popular section -->
+    <section class="section section-anim">
+        <div class="container animFade">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row g-4 gallery" >
+
+                        <div class="col-6 col-md-4 col-lg-3 stagger" *ngFor="let gallary of gallaryList | paginate: {itemsPerPage: 10, currentPage: current_page, totalItems: total, id: 'first' }; let i=index">
+                            <a href="assets/images/offer01.jpg" data-fancybox class="card-wrap">
+                                <div class="galleryImgWrap m-auto">
+                                    <img [src]="gallary.url" class="img-fluid mx-auto d-block" alt="product picture">
+                                </div>
+                            </a>
+                        </div>  
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">Showing {{ startvalue }} to {{ endvalue }} of {{ total }} entries</div>
+                    <!-- maxSize="9" directionLinks="true"  -->
+                    <div class="col-auto">
+                        <pagination-controls (pageChange)="pageChangeEvent($event)" id="first" previouLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page" ></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+    <!-- subscription section -->
+    <section class="py-5 theme-bg-primary animFade">
+        <div class="container">
+            <div class="row justify-between items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="d-flex  align-items-center">
+                        <img src="assets/images/icons/subscribe-icon.png" alt="subscribe" class="img-fluid">
+                        <div class="ms-3">
+                            <h4 class="text-26 text-white fw-600">Your Travel Journey Starts Here</h4>
+                            <p class="text-white">Sign up and we'll send the best deals to you</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 offset-lg-1 align-self-center">
+                    <div class="input-group subs-form">
+                        <input type="text" class="form-control border-0" placeholder="Your Email"
+                            aria-label="Your Email" aria-describedby="button-addon2">
+                        <button class="btn btn-search" type="button" id="button-addon2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section-->
+    
+</main>

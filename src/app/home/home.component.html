@@ -1,0 +1,513 @@
+
+<main class="main clearfix">
+
+    <section class="section section-hero section-anim p-0">
+        <div class="swiper-container hero-slider">
+            <div class="swiper-wrapper">
+    
+                <div class="swiper-slide">
+                    <img src="./assets/images/hero-image1.jpg" class="w-100" alt="">                        
+                </div>
+                
+                <div class="swiper-slide">
+                    <img src="./assets/images/hero-image2.jpg" class="w-100" alt="">
+                </div>
+    
+            </div>
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+        <div class="heroTextWrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-12 mb-4 text-center position-relative">
+                        <h1 class="display-3 stagger fw-bold mb-4 theme-text-white theme-text-shadow">
+                            Best Umrah Service Provider
+                        </h1>
+                        <p class="mb-0 stagger theme-text-white">Find Amzaing Umrah Packages At Exclusive Deals</p>
+                    </div>
+                </div>
+                <!-- search engine tabs -->
+                <div class="row stagger">
+                    <div class="col-12 col-lg-10 offset-lg-1 mb-5 text-center position-relative">
+                
+                        <div class="tab-content mt-3">
+                            
+                            <!-- holiday search tab -->
+                            <div class="tab-pane1  ">
+                                <!-- holidays search -->
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-lg-6">
+                                        <div class="search-pan row mx-0 theme-border-radius">
+                                            <div class="col-12 col-lg-4 col-xl ps-0 mb-2 mb-xl-0 pe-0 pe-lg-2">
+                                                <div class="form-group">
+                                                
+                                                    <select name="" id="" class="form-select form-select-lg">
+                                                        <option value="">Category</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <button type="submit" class="btn btn-search"
+                                                    onclick="window.location.href='';">
+                                                    <span class="fw-bold"><i
+                                                            class="bi bi-search me-2"></i>Search</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /holidays search -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- popular section -->
+    <section class="recommended section-anim">
+        <div class="container animFade">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h4 class="fs-2 fw-bold theme-text-secondary mb-0">Popular Tours</h4>
+                    <p class="mb-0 theme-text-accent-one">Find best tours specially custimize for you</p>
+                </div>
+                <div class="col-12 col-lg-6 align-self-center justify-content-end d-flex">
+                    <a href="javascript:void(0)" (click)="view_all()" class="btn btn-sm btn-primary">View All Tours</a>
+                </div>
+            </div>
+            <!-- popular tours card -->
+            <div class="row mt-5">
+                <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0 stagger"  *ngFor="let package of packageList">
+                    <div class="card-wrap">
+                        <div class="con-img-wrap m-auto">
+                            <img [src]="package.file" class="img-fluid mx-auto d-block" alt="product picture" *ngIf="package.file!=''">
+                            <img src="assets/images/offer01.jpg" class="img-fluid mx-auto d-block" alt="product picture" *ngIf="package.file == ''">
+                            <div class="offer-tag bg-warning">Best Deal</div>
+                            
+                        </div>
+                        <div class="con-wrap mt-4">
+                            <h2 class="fs-6 mt-4 fw-bold text-truncate">{{package.title}}</h2>
+                            <p class="mb-2 theme-text-accent-two small">{{package.total_days}}N Makkah, {{package.total_nights}}N Madina</p>
+                            <div class="d-flex bottom mb-2">
+                                <div class="rating-cover">
+                                    <span class="p-1 small rounded-1 bg-warning theme-text-white">4.8</span>
+                                    <span class="me-2 small theme-text-accent-one">Exceptional</span>
+                                    <span class="small">3,014 reviews</span>
+                                </div>
+                            </div>
+                            <p class="mb-0 theme-text-accent-one">Starting from {{package.amount | currency:'INR'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- special offers section -->
+    <section class="special-offers section-anim">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mb-5 stagger">
+                    <h4 class="fs-2 fw-bold theme-text-secondary mb-0">Special Offers</h4>
+                    <p class="mb-0 theme-text-accent-one">These popular destinations have a lot to offer</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 mb-3 mb-md-0 overflow-hidden hoverShine stagger">
+                    <div class="box product01" style="background-image: url(./assets/images/special-img1.jpg);">
+                        <div class="content">
+                            <p class="fs-1 theme-heading theme-text-white mb-4">Things to do on <br>
+                                your trip</p>
+                                
+                            <div class="custom-button">
+                                <a href="javascript:void(0)" class="btn btn-shop small">
+                                    Learn More
+                                    <i class="bi bi-arrow-up-right fs-6 ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-3 mb-md-0 overflow-hidden hoverShine stagger">
+                    <div class="box product02" style="background-image: url(./assets/images/special-img2.jpg);">
+                        <div class="content">
+                            <p class="fs-6 mb-2 theme-text-white">Umrah Season 1445 Offers</p>
+                            <p class="fs-1 theme-heading theme-text-white mb-4">Up to 40% Discount!</p>
+                            <div class="custom-button">
+                                <a href="javascript:void(0)" class="btn btn-shop small">
+                                    View Deal
+                                    <i class="bi bi-arrow-up-right fs-6 ms-2"></i>
+                                </a>
+                                <small>*Terms applied</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- popular section -->
+    <section class="recommended section-anim">
+        <div class="container">
+            <div class="row animFade">
+                <div class="col-12 col-lg-6">
+                    <h4 class="fs-2 fw-bold theme-text-secondary mb-0">Our Recommended</h4>
+                    <p class="mb-0 theme-text-accent-one">Find best tours specially custimize for you</p>
+                </div>
+                <div class="col-12 col-lg-6 align-self-center justify-content-end d-flex">
+                    <a href="" class="btn btn-sm btn-primary">View All Tours</a>
+                </div>
+            </div>
+            <!-- popular tours card -->
+            <div class="row mt-5">
+                <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0 stagger">
+                    <div class="card-wrap">
+                        <div class="con-img-wrap m-auto">
+                            <img src="assets/images/offer01.jpg" class="img-fluid mx-auto d-block"
+                                alt="product picture">
+                            <div class="offer-tag bg-warning">Best Deal</div>
+                            
+                        </div>
+                        <div class="con-wrap mt-4">
+                            <h2 class="fs-6 mt-4 fw-bold text-truncate">Umrah Package From Kolkata</h2>
+                            <p class="mb-2 theme-text-accent-two small">8N Makkah, 6N Madina</p>
+                            <div class="d-flex bottom mb-2">
+                                <div class="rating-cover">
+                                    <span class="p-1 small rounded-1 bg-warning theme-text-white">4.8</span>
+                                    <span class="me-2 small theme-text-accent-one">Exceptional</span>
+                                    <span class="small">3,014 reviews</span>
+                                </div>
+                            </div>
+                            <p class="mb-0 theme-text-accent-one">Starting from ₹94,999</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- repetable -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0 stagger">
+                    <div class="card-wrap">
+                        <div class="con-img-wrap m-auto">
+                            <img src="assets/images/offer01.jpg" class="img-fluid mx-auto d-block"
+                                alt="product picture">
+                            <div class="offer-tag bg-info text-white">Best Deal</div>
+                            
+                        </div>
+                        <div class="con-wrap mt-4">
+                            <h2 class="fs-6 mt-4 fw-bold text-truncate">Umrah Package From Kolkata</h2>
+                            <p class="mb-2 theme-text-accent-two small">8N Makkah, 6N Madina</p>
+                            <div class="d-flex bottom mb-2">
+                                <div class="rating-cover">
+                                    <span class="p-1 small rounded-1 bg-info theme-text-white">4.8</span>
+                                    <span class="me-2 small theme-text-accent-one">Exceptional</span>
+                                    <span class="small">3,014 reviews</span>
+                                </div>
+                            </div>
+                            <p class="mb-0 theme-text-accent-one">Starting from ₹94,999</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- repetable -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0 stagger">
+                    <div class="card-wrap">
+                        <div class="con-img-wrap m-auto">
+                            <img src="assets/images/offer01.jpg" class="img-fluid mx-auto d-block"
+                                alt="product picture">
+                            <div class="offer-tag bg-success text-white">Best Deal</div>
+                            
+                        </div>
+                        <div class="con-wrap mt-4">
+                            <h2 class="fs-6 mt-4 fw-bold text-truncate">Umrah Package From Kolkata</h2>
+                            <p class="mb-2 theme-text-accent-two small">8N Makkah, 6N Madina</p>
+                            <div class="d-flex bottom mb-2">
+                                <div class="rating-cover">
+                                    <span class="p-1 small rounded-1 bg-success theme-text-white">4.8</span>
+                                    <span class="me-2 small theme-text-accent-one">Exceptional</span>
+                                    <span class="small">3,014 reviews</span>
+                                </div>
+                            </div>
+                            <p class="mb-0 theme-text-accent-one">Starting from ₹94,999</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- repetable -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0 stagger">
+                    <div class="card-wrap">
+                        <div class="con-img-wrap m-auto">
+                            <img src="assets/images/offer01.jpg" class="img-fluid mx-auto d-block"
+                                alt="product picture">
+                            <div class="offer-tag bg-danger text-white">Best Deal</div>
+                            
+                        </div>
+                        <div class="con-wrap mt-4">
+                            <h2 class="fs-6 mt-4 fw-bold text-truncate">Umrah Package From Kolkata</h2>
+                            <p class="mb-2 theme-text-accent-two small">8N Makkah, 6N Madina</p>
+                            <div class="d-flex bottom mb-2">
+                                <div class="rating-cover">
+                                    <span class="p-1 small rounded-1 bg-danger theme-text-white">4.8</span>
+                                    <span class="me-2 small theme-text-accent-one">Exceptional</span>
+                                    <span class="small">3,014 reviews</span>
+                                </div>
+                            </div>
+                            <p class="mb-0 theme-text-accent-one">Starting from ₹94,999</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- repetable -->
+            </div>
+        </div>
+    </section>
+
+    <!-- wonderful experience -->
+    <section class="experience section-anim">
+        <div class="container animFade">
+            <div class="row">
+                <div class="col-12">
+                    <div class="wrap" style="background-image: url(./assets/images/hero-image2.jpg);">
+                        <div class="row">
+                            <div class="col-12 position-relative align-self-center">
+                                <h4 class="display-4 theme-text-white mb-0 fw-bold text-center">Wonderful Travel
+                                    Experiences with<br>
+                                    Umrah Tour and Travel Provider</h4>
+                                <div class="group custom-button">
+                                    <div class="d-flex align-items-center">
+                                        <a href="https://www.youtube.com/watch?v=JPZ432oa9Gw" data-fancybox="video-gallery" class="video-icon video-icon2 mr-30 ml-20 video_model">
+                                            <i class="bi bi-play"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-sm-6 col-lg-3 mb-3 mb-lg-0 stagger">
+                    <div class="d-flex align-items-center p-4 p-md-0">
+                        <i class="bi bi-airplane fs-4 theme-text-primary"></i>
+                        <h3 class="fs-2 mb-0 mx-3">300+</h3>
+                        <p class="fs-4 mb-0 theme-text-accent-one">Flights</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-3 mb-lg-0 stagger">
+                    <div class="d-flex align-items-center p-4 p-md-0">
+                        <i class="bi bi-hospital fs-4 theme-text-primary"></i>
+                        <h3 class="fs-2 mb-0 mx-3">800+</h3>
+                        <p class="fs-4 mb-0 theme-text-accent-one">Hotels</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-3 mb-lg-0 stagger">
+                    <div class="d-flex align-items-center p-4 p-md-0">
+                        <i class="bi bi-award fs-4 theme-text-primary"></i>
+                        <h3 class="fs-2 mb-0 mx-3">100+</h3>
+                        <p class="fs-4 mb-0 theme-text-accent-one">Packages</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mb-3 mb-lg-0 stagger">
+                    <div class="d-flex align-items-center p-4 p-md-0">
+                        <i class="bi bi-star fs-4 theme-text-primary"></i>
+                        <h3 class="fs-2 mb-0 mx-3">5 Star</h3>
+                        <p class="fs-4 mb-0 theme-text-accent-one">Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- testimonials section -->
+    <section class="testimonials py-5 section-anim">
+        <div class="container animFade">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <h4 class="fs-2 fw-bold theme-text-secondary mb-0">What our customers are saying us?
+                    </h4>
+                    <p class="mb-0 theme-text-accent-one">We are very exciting and happy for our customers and their feedbacks.</p>
+                </div>
+                <div class="col-12 col-lg-6 align-self-center justify-content-end d-flex">
+                    <div class="d-flex">
+                        <div class="d-flex flex-column text-end mt-3 mt-lg-0">
+                            <span class="fs-3 theme-text-accent-one fw-bold text-black">13m+</span>
+                            <span class="font-extra-small theme-text-accent-one">Happy People</span>
+                        </div>
+                        <div class="d-flex flex-column text-end mt-3 mt-lg-0 ms-5">
+                            <span class="fs-3 theme-text-accent-one fw-bold text-black">4.88</span>
+                            <span class="font-extra-small theme-text-accent-one">Overall rating</span>
+                            <span class="text-warning"><i class="bi bi-star-fill me-1 extra-text-color"></i>
+                                <i class="bi bi-star-fill me-1 extra-text-color"></i>
+                                <i class="bi bi-star-fill me-1 extra-text-color"></i>
+                                <i class="bi bi-star-fill me-1 extra-text-color"></i>
+                                <i class="bi bi-star-fill me-1 extra-text-color"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- testimonials-->
+            <div class="mt-5">
+                <div class="row">
+                    <div class="col-12 col-lg-4 position-relative stagger">
+                        <div class="client-con p-5 mt-5 mt-lg-0 theme-box-shadow">
+                            <h4 class="mb-3 fs-6 theme-text-primary">Very Happy</h4>
+                            <p class="mb-0 theme-text-accent-two lh-lg small">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore sunt explicabo."
+                            </p>
+                            <div class="d-flex flex-column justify-content-center mt-3 pt-3 border-top">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <figure class="mb-0 avatar">
+                                            <img src="assets/images/avatar02.png" class="img-fluid"
+                                                alt="client review">
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <span class="mt-2 theme-text-accent-one">Ahmed Shakil</span>
+                                        <p class="mb-0 theme-text-accent-two small">Umrah Travellers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- repeatable-->
+                    <div class="col-12 col-lg-4 position-relative stagger">
+                        <div class="client-con p-5 mt-5 mt-lg-0 theme-box-shadow">
+                            <h4 class="mb-3 fs-6 theme-text-primary">Excellent!</h4>
+                            <p class="mb-0 theme-text-accent-two lh-lg small">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore sunt explicabo."
+                            </p>
+                            <div class="d-flex flex-column justify-content-center mt-3 pt-3 border-top">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <figure class="mb-0 avatar">
+                                            <img src="assets/images/avatar02.png" class="img-fluid"
+                                                alt="client review">
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <span class="mt-2 theme-text-accent-one">Ahmed Shakil</span>
+                                        <p class="mb-0 theme-text-accent-two small">Umrah Travellers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- repeatable-->
+                    <div class="col-12 col-lg-4 position-relative stagger">
+                        <div class="client-con p-5 mt-5 mt-lg-0 theme-box-shadow">
+                            <h4 class="mb-3 fs-6 theme-text-primary">Super Trip</h4>
+                            <p class="mb-0 theme-text-accent-two lh-lg small">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore sunt explicabo."
+                            </p>
+                            <div class="d-flex flex-column justify-content-center mt-3 pt-3 border-top">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <figure class="mb-0 avatar">
+                                            <img src="assets/images/avatar02.png" class="img-fluid"
+                                                alt="client review">
+                                        </figure>
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <span class="mt-2 theme-text-accent-one">Ahmed Shakil</span>
+                                        <p class="mb-0 theme-text-accent-two small">Umrah Travellers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- repeatable-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- blog/news section -->
+    <section class="blog py-5 section-anim">
+        <div class="container">
+            <div class="row mb-5 animFade">
+                <div class="col-12 text-center">
+                    <h2 class="fs-2 fw-bold text-center theme-text-secondary mb-0">Get inspiration for your next trip
+                    </h2>
+                    <p class="mb-0 theme-text-accent-one">Excellent travel blog</p>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-lg-4 mb-4 stagger">
+                    <div class="blog-card row g-0">
+                        <div class="overflow-hidden position-relative col-12 theme-border-radius">
+                            <figure class="mb-0 img-effect">
+                                <img src="assets/images/blog-img.jpg" class="img-fluid" alt="news articles">
+                            </figure>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <h2 class="fs-5 fw-bold theme-heading my-3">Umrah 2023: About History, Booking and Rituals</h2>
+                            <div class="my-3">
+                                <a href="javascript:void(0)" class="small fw-bold theme-text-accent-one">
+                                    <i class="bi bi-calendar4-week me-2 theme-text-primary"></i>
+                                    April 06, 2022
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- repeate -->
+                <div class="col-12 col-lg-4 mb-4 stagger">
+                    <div class="blog-card row g-0">
+                        <div class="overflow-hidden position-relative col-12 theme-border-radius">
+                            <figure class="mb-0 img-effect">
+                                <img src="assets/images/blog-img1.jpg" class="img-fluid" alt="news articles">
+                            </figure>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <h2 class="fs-5 fw-bold theme-heading my-3">A Humble Example Of Arabian Architecture</h2>
+                            <div class="my-3">
+                                <a href="javascript:void(0)" class="small fw-bold theme-text-accent-one">
+                                    <i class="bi bi-calendar4-week me-2 theme-text-primary"></i>
+                                    April 16, 2022
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- repeate -->
+                <div class="col-12 col-lg-4 mb-4 stagger">
+                    <div class="blog-card row g-0">
+                        <div class="overflow-hidden position-relative col-12 theme-border-radius">
+                            <figure class="mb-0 img-effect">
+                                <img src="assets/images/blog-img2.jpg" class="img-fluid" alt="news articles">
+                            </figure>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <h2 class="fs-5 fw-bold theme-heading my-3">The importance of Islamic finance and banking</h2>
+                            <div class="my-3">
+                                <a href="javascript:void(0)" class="small fw-bold theme-text-accent-one">
+                                    <i class="bi bi-calendar4-week me-2 theme-text-primary"></i>
+                                    April 23, 2022
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- repeate -->
+            </div>
+        </div>
+    </section>
+    <!-- subscription section -->
+    <section class="py-5 theme-bg-primary animFade">
+        <div class="container">
+            <div class="row justify-between items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="d-flex  align-items-center">
+                        <img src="assets/images/icons/subscribe-icon.png" alt="subscribe" class="img-fluid">
+                        <div class="ms-3">
+                            <h4 class="text-26 text-white fw-600">Your Travel Journey Starts Here</h4>
+                            <p class="text-white">Sign up and we'll send the best deals to you</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 offset-lg-1 align-self-center">
+                    <div class="input-group subs-form">
+                        <input type="text" class="form-control border-0" placeholder="Your Email"
+                            aria-label="Your Email" aria-describedby="button-addon2">
+                        <button class="btn btn-search" type="button" id="button-addon2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section-->
+    
+</main>

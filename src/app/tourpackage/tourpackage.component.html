@@ -1,0 +1,159 @@
+<main class="main clearfix">
+
+    <section class="section section-inner-hero section-anim p-0" style="background-image: url(./assets/images/hero-image1.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 py-9 text-center text-white">
+                    <h1>{{heading}} Packages</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- popular section -->
+    <section class="section section-anim">
+        <div class="container animFade">
+            <div class="row">
+                <div class="col-12 col-lg-4 order-2 order-lg-1">
+                    <h4 class="fs-2 fw-bold theme-text-secondary mb-0">Top Selling Packages</h4>
+                    <div class="topPackagesWrap my-4">
+                        <a href="./tour-detail.html" class="tpBox d-block py-3">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="thumb">
+                                        <img src="assets/images/offer01.jpg" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6>Umrah Package from Delhi</h6>
+                                    <p class="mb-0 theme-text-accent-two small">8N Makkah, 6N Madina</p>
+                                    <!-- <p class="mb-0 theme-text-accent-one">From <strike>₹99,000</strike> ₹94,999</p> -->
+                                    <p class="mb-0 theme-text-accent-one"> ₹94,999</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./tour-detail.html" class="tpBox d-block py-3">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="thumb">
+                                        <img src="assets/images/offer01.jpg" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6>Umrah Package from Delhi</h6>
+                                    <p class="mb-0 theme-text-accent-two small">8N Makkah, 6N Madina</p>
+                                    <!-- <p class="mb-0 theme-text-accent-one">From <strike>₹99,000</strike> ₹94,999</p> -->
+                                    <p class="mb-0 theme-text-accent-one">₹94,999</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./tour-detail.html" class="tpBox d-block py-3">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="thumb">
+                                        <img src="assets/images/offer01.jpg" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6>Umrah Package from Delhi</h6>
+                                    <p class="mb-0 theme-text-accent-two small">8N Makkah, 6N Madina</p>
+                                    <!-- <p class="mb-0 theme-text-accent-one">From <strike>₹99,000</strike> ₹94,999</p> -->
+                                    <p class="mb-0 theme-text-accent-one">₹94,999</p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="./tour-detail.html" class="tpBox d-block py-3">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="thumb">
+                                        <img src="assets/images/offer01.jpg" style="width:80px" alt="">
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <h6>Umrah Package from Delhi</h6>
+                                    <p class="mb-0 theme-text-accent-two small">8N Makkah, 6N Madina</p>
+                                    <!-- <p class="mb-0 theme-text-accent-one">From <strike>₹99,000</strike> ₹94,999</p> -->
+                                    <p class="mb-0 theme-text-accent-one">₹94,999</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="contactBox bg-primary text-white p-4">
+                        <h3>Any Question?</h3>
+                        <p>Do not hesitage to give us a call. We are an expert team and we are happy to talk to you.</p>
+                        1800 208 4333<br>
+                        info@sarvartravels.com
+
+                    </div>
+
+                </div>
+                
+                <div class="col-12 col-lg-8 order-1 order-lg-2" >
+
+                    <div class="row g-4 recommended p-0">
+                        <div class="col-12 col-md-6 col-lg-6 stagger" *ngFor="let package of packageList | paginate: {itemsPerPage: 10, currentPage: current_page, totalItems: total, id: 'first' }; let i=index">
+                            <a href="./tour-detail.html" class="card-wrap">
+                                <div class="con-img-wrap m-auto">
+                                    <img [src]="package.file" class="img-fluid mx-auto d-block" alt="product picture" *ngIf="package.file!=''">
+                                    <img src="assets/images/offer01.jpg" class="img-fluid mx-auto d-block" alt="product picture" *ngIf="package.file == ''">
+                                    <div class="offer-tag bg-warning">Best Deal</div>
+                                    
+                                </div>
+                                <div class="con-wrap mt-4">
+                                    <h2 class="fs-6 mt-4 fw-bold text-truncate">{{package.title}}</h2>
+                                    <p class="mb-2 theme-text-accent-two small">{{package.total_days}}N Makkah, {{package.total_nights}}N Madina</p>
+                                    <div class="d-flex bottom mb-2">
+                                        <div class="rating-cover">
+                                            <span class="p-1 small rounded-1 bg-warning theme-text-white">4.8</span>
+                                            <span class="me-2 small theme-text-accent-one">Exceptional</span>
+                                            <span class="small">3,014 reviews</span>
+                                        </div>
+                                    </div>
+                                    <p class="mb-0 theme-text-accent-one">Starting from {{package.amount | currency:'INR'}}</p>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- repetable -->
+                       
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">Showing {{ startvalue }} to {{ endvalue }} of {{ total }} entries</div>
+                    <!-- maxSize="9" directionLinks="true"  -->
+                    <div class="col-auto">
+                        <pagination-controls (pageChange)="pageChangeEvent($event)" id="first" previouLabel="Previous" nextLabel="Next" screenReaderPaginationLabel="Pagination" screenReaderPageLabel="page" ></pagination-controls>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+   
+    <!-- subscription section -->
+    <section class="py-5 theme-bg-primary animFade">
+        <div class="container">
+            <div class="row justify-between items-center">
+                <div class="col-12 col-lg-6">
+                    <div class="d-flex  align-items-center">
+                        <img src="assets/images/icons/subscribe-icon.png" alt="subscribe" class="img-fluid">
+                        <div class="ms-3">
+                            <h4 class="text-26 text-white fw-600">Your Travel Journey Starts Here</h4>
+                            <p class="text-white">Sign up and we'll send the best deals to you</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5 offset-lg-1 align-self-center">
+                    <div class="input-group subs-form">
+                        <input type="text" class="form-control border-0" placeholder="Your Email"
+                            aria-label="Your Email" aria-describedby="button-addon2">
+                        <button class="btn btn-search" type="button" id="button-addon2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer section-->
+    
+</main>

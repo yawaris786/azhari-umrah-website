@@ -1,0 +1,29 @@
+function printNumber(n){
+    for(let i=1; i<=n;i++){
+        setTimeout(()=>{
+            console.log(i)
+        },1000*i)
+    }
+}
+
+printNumber(5)
+
+
+
+
+
+function runFunc(){
+
+  console.log("1" + 1);  // 11
+
+  console.log("A" - 1);  // NAN
+
+  console.log(2 + "-2" + "2"); // 2-22
+
+  console.log("Hello" - "World" + 78);  // NAN
+
+  console.log("Hello"+ "78"); // Hello78
+
+}
+
+runFunc();
